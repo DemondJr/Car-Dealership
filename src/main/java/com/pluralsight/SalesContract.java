@@ -71,3 +71,5 @@ public class SalesContract extends Contract {
             return 0.0;
         }
 
+    }
+}

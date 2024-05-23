@@ -7,7 +7,7 @@ public class UserInterface {
 
     private Dealership dealership;
     private Scanner scanner;
-
+    Scanner myScanner;
     public UserInterface() {
         scanner = new Scanner(System.in);
     }
@@ -69,9 +69,9 @@ public class UserInterface {
     }
 
     public void processGetByPriceRequest() {
-        System.out.print("Enter minimum price: ");
+        System.out.print("Enter min price: ");
         double min = scanner.nextDouble();
-        System.out.print("Enter maximum price: ");
+        System.out.print("Enter max price: ");
         double max = scanner.nextDouble();
         List<Vehicle> vehicles = dealership.getVehiclesByPrice(min, max);
         displayVehicles(vehicles);
@@ -87,9 +87,9 @@ public class UserInterface {
     }
 
     public void processGetByYearRequest() {
-        System.out.print("Enter minimum year: ");
+        System.out.print("Enter min year: ");
         int min = scanner.nextInt();
-        System.out.print("Enter maximum year: ");
+        System.out.print("Enter max year: ");
         int max = scanner.nextInt();
         List<Vehicle> vehicles = dealership.getVehiclesByYear(min, max);
         displayVehicles(vehicles);
@@ -103,9 +103,9 @@ public class UserInterface {
     }
 
     public void processGetByMileageRequest() {
-        System.out.print("Enter minimum mileage: ");
+        System.out.print("Enter min mileage: ");
         int min = scanner.nextInt();
-        System.out.print("Enter maximum mileage: ");
+        System.out.print("Enter max mileage: ");
         int max = scanner.nextInt();
         List<Vehicle> vehicles = dealership.getVehiclesByMileage(min, max);
         displayVehicles(vehicles);
@@ -192,6 +192,29 @@ public class UserInterface {
         for (Vehicle vehicle : vehicles) {
             System.out.println(vehicle.toString());
         }
+    }
+    private void processLeaseAVehicle() {
+        System.out.println("Please enter the date in the following format (YYYYMMDD)");
+        String date = myScanner.nextLine();
+        System.out.println("Please enter the name of the customer.");
+        String customerName = myScanner.nextLine();
+        System.out.println("Please enter the email of the customer.");
+        String customerEmail = myScanner.nextLine();
+        System.out.println("Please enter the vehicle's VIN number:");
+        int vin = myScanner.nextInt();
+
+    }
+
+    private void processVehicleSale() {
+        System.out.println("Please enter the date in the following format (YYYYMMDD");
+        String date = myScanner.nextLine();
+        System.out.println("Please enter the name of the customer.");
+        String customerName = myScanner.nextLine();
+        System.out.println("Please enter the email of the customer.");
+        String customerEmail = myScanner.nextLine();
+        System.out.println("Please enter the vehicle's VIN number:");
+        int vin = myScanner.nextInt();
+
     }
 
 }
